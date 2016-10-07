@@ -1,25 +1,40 @@
 /* Empty. Add your own CSS if you like */
-.form{
-	width: 100%;
-    height: 100%;
-    position: absolute;
-    display: table;
+
+.form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: table;
 }
-.form-inner{
-	 vertical-align: middle;
-    padding: 0px;
-    display: table-cell;
-    margin: 0px;
+
+.form-inner {
+  vertical-align: middle;
+  padding: 0px;
+  display: table-cell;
+  margin: 0px;
 }
-.form-content{
-	margin-left: auto;
-	margin-right: auto;
+
+.form-content {
+  margin-left: auto;
+  margin-right: auto;
 }
-.has-error{
-    border:1px solid;
-    color:red;
+
+.has-error {
+  border: 1px solid;
+  color: red;
 }
-.help-block{
-    color:red;
-    text-align: center;
+
+.help-block {
+  color: red;
+  text-align: center;
+}
+
+.button.button-light.active,
+.button.button-light.activated {
+  color: #fff;
+  opacity: inherit;
+}
+
+.login-form-container {
+  padding-top: 40%;
 }
