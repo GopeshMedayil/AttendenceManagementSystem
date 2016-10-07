@@ -1,40 +1,94 @@
 /* Empty. Add your own CSS if you like */
 
 .form {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: table;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: table;
 }
 
 .form-inner {
-  vertical-align: middle;
-  padding: 0px;
-  display: table-cell;
-  margin: 0px;
+    vertical-align: middle;
+    padding: 0px;
+    display: table-cell;
+    margin: 0px;
 }
 
 .form-content {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .has-error {
-  border: 1px solid;
-  color: red;
+    border: 1px solid;
+    color: red;
 }
 
 .help-block {
-  color: red;
-  text-align: center;
+    color: red;
+    text-align: center;
 }
 
 .button.button-light.active,
 .button.button-light.activated {
-  color: #fff;
-  opacity: inherit;
+    color: #fff;
+    opacity: inherit;
 }
 
 .login-form-container {
-  padding-top: 40%;
+    padding-top: 40%;
+}
+
+.idk {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    // width:500px;
+    height: auto;
+}
+
+.idk img {
+    border-top: 2px dotted #3268C7;
+    border-bottom: 2px dotted #D14545;
+    border-radius: 50%;
+    width: 140px;
+    height: auto;
+    padding: 7px;
+}
+
+.idk h3 {
+    // font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin-top: 1px;
+    color: #D14545;
+}
+
+.idk .hr {
+    width: 300px;
+    border: 1px solid #3D3D3D;
+}
+
+.name {
+    text-align: center;
+    display: block;
+    font-size: 1.0em;
+    color: #84827f;
+    opacity: 0.75;
+}
+
+p {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.grid {
+    height: 50px;
+    border-bottom: 1px solid #e49393;
+}
+
+.red {
+    color: red;
+    font-size: 2.5em;
 }
