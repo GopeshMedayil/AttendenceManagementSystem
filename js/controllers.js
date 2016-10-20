@@ -22,11 +22,16 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('loginCtrl', function ($scope, $stateParams, $location) {
+  .controller('loginCtrl', function ($scope, $stateParams, $location, loginService) {
     //$scope.chat = Chats.get($stateParams.chatId);
-    $scope.login = function () {
-      $location.path("tab/dash");
-      console.log("Test");
+    $scope.login = function (data) {
+      loginService.sendLogin(data).then(function (response) {
+
+      }, function () {
+
+      })
+      // $location.path("tab/dash");
+      console.log("Test", data);
     }
   })
 

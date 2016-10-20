@@ -1,6 +1,6 @@
-angular.module('starter.services', [])
+var app = angular.module('starter.services', []);
 
-.factory('Chats', function() {
+app.factory('Chats', function () {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -32,13 +32,13 @@ angular.module('starter.services', [])
   }];
 
   return {
-    all: function() {
+    all: function () {
       return chats;
     },
-    remove: function(chat) {
+    remove: function (chat) {
       chats.splice(chats.indexOf(chat), 1);
     },
-    get: function(chatId) {
+    get: function (chatId) {
       for (var i = 0; i < chats.length; i++) {
         if (chats[i].id === parseInt(chatId)) {
           return chats[i];
@@ -47,4 +47,24 @@ angular.module('starter.services', [])
       return null;
     }
   };
+});
+
+
+app.factory('loginService', function ($http, $q) {
+  return {
+    sendLogin: function (loginDetails) {
+      var deferred = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/someUrl',
+        data: loginDetails,
+      }).then(function successCallback(response) {
+        deferred.resolve(response);
+      }, function errorCallback(response) {
+        deferred.reject(response);
+      });
+      return deferred.promise;
+    }
+  }
+
 });
