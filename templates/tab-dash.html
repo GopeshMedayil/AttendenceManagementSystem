@@ -1,33 +1,32 @@
-<ion-view view-title="Profile"
->
-    <ion-content class="padding">
-        <div class="idk header">
-            <center>
-                <a href="#"><img class="avatar" src="https://u.pomf.is/mpwnlc.png"></a>
-            </center>
-            <h3>Gopesh Gopinath</h3>
-            <h4 class="name">System Administrator </h4>
-            <hr class="hr">
-        </div>
-        <div class="profile-content">
-            <div class="row">
-                <div class="col grid">
-                    <span class="" style="float: left;width: 11%; "><i class="icon ion-email red "></i></span>
-                    <span class=" " style="float: right;width: 84%;margin-top: 7px; ">medayilgopesh@gmail.com</span>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col grid">
-                    <span class="" style="float: left;width: 11%; "><i class="icon ion-ios-telephone red "></i></span>
-                    <span class=" " style="float: right;width: 84%;margin-top: 7px; ">9447785419</span>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col grid">
-                    <span class="" style="float: left;width: 11%; "><i class="icon ion-home red "></i></span>
-                    <span class=" " style="float: right;width: 84%;margin-top: 7px; ">Science</span>
-                </div>
-            </div>
-        </div>
-    </ion-content>
+<ion-view view-title="Profile">
+	<ion-content class="padding">
+		<div class="idk header">
+			<center>
+				<a href="#"><img class="avatar" src="https://u.pomf.is/mpwnlc.png"></a>
+			</center>
+			<h3>{{profileDetails.staffName}}</h3>
+			<h4 class="name">Teacher</h4>
+			<hr class="hr">
+		</div>
+		<div class="profile-content">
+			<div class="row">
+				<div class="col grid">
+					<span class="" style="float: left;width: 11%; "><i class="icon ion-email red "></i></span>
+					<span class=" " style="float: right;width: 84%;margin-top: 7px; ">{{profileDetails.email}}</span>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col grid">
+					<span class="" style="float: left;width: 11%; "><i class="icon ion-ios-telephone red "></i></span>
+					<span class=" " style="float: right;width: 84%;margin-top: 7px; ">{{profileDetails.contact_no}}</span>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col grid">
+					<span class="" style="float: left;width: 11%; "><i class="icon ion-home red "></i></span>
+					<span class=" " style="float: right;width: 84%;margin-top: 7px; ">Science</span>
+				</div>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>

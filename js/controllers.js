@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function ($scope) {
+  .controller('DashCtrl', function ($scope, loginService) {
+    $scope.profileDetails = loginService.getProfileDetails();
+
   })
 
   .controller('ChatsCtrl', function ($scope, Chats) {
@@ -22,31 +24,47 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('loginCtrl', function ($scope, $stateParams, $location, loginService) {
+  .controller('loginCtrl', function ($scope, $state, $location, loginService) {
     //$scope.chat = Chats.get($stateParams.chatId);
+    var roleTypeId;
+
     $scope.login = function (data) {
       loginService.sendLogin(data).then(function (response) {
+        if (response.data) {
+          loginService.setProfileDetails(response.data);
+          $scope.roleRoute(response.data.roleTypeId);
 
+        }
       }, function () {
 
       })
       // $location.path("tab/dash");
       console.log("Test", data);
+    };
+
+    $scope.roleRoute = function (roleTypeId) {
+      if (roleTypeId) {
+        // if (roleTypeId == 1) {
+        $state.go('tab.dash');
+        // }
+      }
     }
+
+
   })
 
   .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
   })
 
-  .controller('AccountCtrl', function ($scope, $state, $location, $timeout, $ionicPopup, $rootScope, $ionicHistory) {
+  .controller('AccountCtrl', function ($scope, $state, $location, $timeout, $ionicPopup, $rootScope, $ionicHistory, loginService) {
+
     $scope.name = "Gopesh";
     $scope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
       //assign the "from" parameter to something
       console.log("From", from)
     });
     $scope.$on('$ionicView.enter', function (e) {
-
       var confirmPopup = $ionicPopup.confirm({
         title: 'Logout',
         template: 'Are you sure to logout?'

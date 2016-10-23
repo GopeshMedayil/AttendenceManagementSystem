@@ -51,19 +51,27 @@ app.factory('Chats', function () {
 
 
 app.factory('loginService', function ($http, $q) {
+  var profileDetails;
   return {
     sendLogin: function (loginDetails) {
       var deferred = $q.defer();
       $http({
         method: 'POST',
-        url: '/someUrl',
+        url: 'http://app.elixirerp.com/api/login.php',
         data: loginDetails,
+        dataType: 'json',
       }).then(function successCallback(response) {
         deferred.resolve(response);
       }, function errorCallback(response) {
         deferred.reject(response);
       });
       return deferred.promise;
+    },
+    setProfileDetails: function (userDetails) {
+      profileDetails = userDetails;
+    },
+    getProfileDetails: function () {
+      return profileDetails;
     }
   }
 
