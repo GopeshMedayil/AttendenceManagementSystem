@@ -24,18 +24,27 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('loginCtrl', function ($scope, $state, $location, loginService) {
+  .controller('loginCtrl', function ($scope, $state, $location, loginService, $ionicLoading) {
     //$scope.chat = Chats.get($stateParams.chatId);
     var roleTypeId;
 
     $scope.login = function (data) {
+      $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+      });
       loginService.sendLogin(data).then(function (response) {
         if (response.data) {
+          $ionicLoading.hide();
           loginService.setProfileDetails(response.data);
           $scope.roleRoute(response.data.roleTypeId);
 
         }
       }, function () {
+        $ionicLoading.hide();
 
       })
       // $location.path("tab/dash");

@@ -76,3 +76,17 @@ app.factory('loginService', function ($http, $q) {
   }
 
 });
+
+// app.factory('httpResponseErrorInterceptor', function ($q, $injector) {
+//   return {
+//     'responseError': function (response) {
+//       if (response.status === 0) {
+//         // should retry
+//         var $http = $injector.get('$http');
+//         return $http(response.config);
+//       }
+//       // give up
+//       return $q.reject(response);
+//     }
+//   };
+// });
