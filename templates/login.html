@@ -1,24 +1,43 @@
-<ion-view view-title="Login" name="login-view">
-	<ion-content class="padding">
+<ion-view view-title="" name="login-view">
+	<ion-content class="padding login-form">
+        <div class="header padding text-center mt15p">
+        	<img src="./img/logo/elixir-192.png" class="w65" alt=""/>
+        </div>		
 		<form name="userForm" method="post">
 			<div class="list login-form-container">
 				<label class="item item-input" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-              <input type="text" placeholder="Username" name="username" autocomplete="off" ng-model="data.username" required>
-          </label>
+              		<input type="text" placeholder="Username" name="username" autocomplete="off" ng-model="data.username" required>
+          		</label>
 				<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block padding">Username is required.</p>
 				<label class="item item-input" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
-              <input type="password" placeholder="Password" ng-model="data.password" name="password" required>
-          </label>
+              		<input type="password" placeholder="Password" ng-model="data.password" name="password" required>
+          		</label>
 				<p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block padding">Password is required.</p>
 			</div>
 			<button class="button button-block button-calm" ng-click="login(data)" ng-disabled="!userForm.$valid">Login</button>
 			<div class="row row-no-padding">
 				<div class="col">
 					<button class="button button-clear button-calm">
-            Forgot password?
-            </button>
+            			Forgot password?
+            		</button>
 				</div>
 			</div>
 		</form>
+		<!--<div>
+        <div class="padding text-center">
+        	<img src="./img/logo/p-logo48-new.png" class="w65" alt=""/>
+        </div>
+		</div>
+	-->
+	<div class="bar bar-footer bar-light">
+  		<div class="title h100">
+  			<img src="./img/logo/p-logo48.png" class="img50 w65" alt=""/>
+  			<div class="text-center footer-text">
+  				Powered by Petal Solutions
+  			</div>
+  		</div>
+	</div>
+
+		
 	</ion-content>
 </ion-view>
