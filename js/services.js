@@ -56,8 +56,8 @@ app.factory('loginService', function ($http, $q) {
     sendLogin: function (loginDetails) {
       var deferred = $q.defer();
       $http({
-        method: 'POST',
-        url: 'http://app.elixirerp.com/api/login.php',
+        method: 'GET',
+        url: 'http://app.elixirerp.com/api/login.php?username='+loginDetails.username+'&password='+loginDetails.password,
         data: loginDetails,
         dataType: 'json',
       }).then(function successCallback(response) {
@@ -73,6 +73,35 @@ app.factory('loginService', function ($http, $q) {
     getProfileDetails: function () {
       return profileDetails;
     }
+  }
+
+});
+
+
+app.factory('notificationService', function ($http, $q) {
+
+  return {
+    getNotification: function (branchCode) {
+      var deferred = $q.defer();
+      $http({
+        method: 'GET',
+        url: 'http://app.elixirerp.com/api/notification.php?branchCode='+branchCode,
+        dataType: 'json',
+      }).then(function successCallback(response) {
+        deferred.resolve(response);
+      }, function errorCallback(response) {
+        deferred.reject(response);
+      });
+      return deferred.promise;
+    },
+    get: function (chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i];
+        }
+      }
+      return null;
+    }    
   }
 
 });
